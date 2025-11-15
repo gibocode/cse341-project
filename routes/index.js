@@ -5,6 +5,7 @@ const categoryRoute = require("./categoryRoute")
 
 // Home Page
 router.get("/", (req, res) => {
+    // #swagger.ignore = true
     res.send("Welcome to CSE 341 Project API!");
 });
 

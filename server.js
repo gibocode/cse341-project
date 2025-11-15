@@ -5,6 +5,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+// Header
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader(
@@ -15,7 +16,13 @@ app.use((req, res, next) => {
     next();
 });
 
+// Routes
 app.use("/", require("./routes"));
+
+// Default error handling
+process.on("uncaughtException", (err) => {
+    console.error("There was an uncaught error", err);
+});
 
 // Initialize database and start server
 database.initialize((err) => {

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const productController = require("../controllers/productController");
+const productValidator = require("../middleware/productValidation");
 
 // Get all products
 router.get("/", productController.getAllProducts);
@@ -8,10 +9,20 @@ router.get("/", productController.getAllProducts);
 router.get("/:id", productController.getProductById);
 
 // Create product
-router.post("/", productController.createProduct);
+router.post(
+    "/",
+    productValidator.productDataValidationRules(),
+    productValidator.checkProductData,
+    productController.createProduct
+);
 
 // Update product by object ID
-router.put("/:id", productController.updateProduct);
+router.put(
+    "/:id",
+    productValidator.productDataValidationRules(),
+    productValidator.checkProductData,
+    productController.updateProduct
+);
 
 // Delete product by object ID
 router.delete("/:id", productController.deleteProduct);
