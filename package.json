@@ -1,0 +1,29 @@
+{
+  "name": "cse341-project",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "swagger-autogen": "node swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gibocode/cse341-project.git"
+  },
+  "keywords": [],
+  "author": "Gilbor Camporazo Jr.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gibocode/cse341-project/issues"
+  },
+  "homepage": "https://github.com/gibocode/cse341-project#readme",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongodb": "^7.0.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
