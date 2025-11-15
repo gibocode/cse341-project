@@ -11,14 +11,12 @@ const getAllProducts = async (req, res) => {
 const getProductById = async (req, res) => {
     // #swagger.tags = ['Products']
     const objectId = new ObjectId(req.params.id);
-    try {
-        const product = new Product();
-        const result = await product.getByObjectId(objectId);
-        if (!result) {
-            return res.status(404).json({ message: "Product not found" });
-        }
-        return res.json(result);
+    const product = new Product();
+    const result = await product.getByObjectId(objectId);
+    if (!result) {
+        return res.status(404).json({ message: "Product not found" });
     }
+    return res.json(result);
 };
 
 const createProduct = async (req, res) => {
