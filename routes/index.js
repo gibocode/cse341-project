@@ -3,6 +3,11 @@ const swaggerRoute = require("./swaggerRoute");
 const productRoute = require("./productRoute");
 const categoryRoute = require("./categoryRoute")
 
+// Home Page
+router.get("/", (req, res) => {
+    res.send("Welcome to CSE 341 Project API!");
+});
+
 // Swagger Routes (API Documentation)
 router.use("/", swaggerRoute);
 
